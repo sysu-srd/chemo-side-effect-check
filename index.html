@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b4f4a">
+  <meta name="description" content="成人化疗患者不良反应结构化自查、三级行动建议与本地随访记录教学演示。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>化疗不良反应自查与随访助手</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <div class="demo-ribbon" role="note">
+    <span>教学演示版</span>
+    <strong>须经本院肿瘤科 / 护理部审核后方可临床使用</strong>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">十</span>
+      <span><strong>安伴</strong><small>化疗不良反应自查</small></span>
+    </a>
+    <nav aria-label="主要导航">
+      <button class="nav-link is-active" data-view-target="home">首页</button>
+      <button class="nav-link" data-view-target="check">开始自查</button>
+      <button class="nav-link" data-view-target="history">随访记录</button>
+    </nav>
+  </header>
+
+  <aside class="emergency-strip" aria-label="急症提醒">
+    <span class="emergency-icon" aria-hidden="true">!</span>
+    <p><strong>出现严重呼吸困难、明显胸痛、意识异常或大量出血？</strong><br><span>不要继续填写，立即拨打 <a href="tel:120">120</a> 或前往急诊。</span></p>
+  </aside>
+
+  <main id="main">
+    <section id="view-home" class="view is-visible" aria-labelledby="home-title">
+      <div class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">给成人化疗患者与照护者</p>
+          <h1 id="home-title">不舒服时，先判断<br><em>下一步该做什么</em></h1>
+          <p class="hero-lead">用 3–5 分钟记录症状。我们会根据你填写的信息，给出清晰、可解释的行动建议。</p>
+          <div class="hero-actions">
+            <button class="button button-primary button-large" data-start-check>开始症状自查 <span aria-hidden="true">→</span></button>
+            <button class="button button-ghost button-large" data-view-target="history">查看随访记录</button>
+          </div>
+          <p class="privacy-note"><span aria-hidden="true">◉</span> 所有记录只保存在当前浏览器，不会上传</p>
+        </div>
+        <div class="hero-panel" aria-label="三级建议说明">
+          <div class="pulse-orbit" aria-hidden="true"><span></span><span></span><span></span><i>安</i></div>
+          <div class="level-preview observe"><b>01</b><span><strong>居家观察</strong><small>轻度且未影响基本活动</small></span></div>
+          <div class="level-preview contact"><b>02</b><span><strong>联系主管医生</strong><small>立即或今日内联系</small></span></div>
+          <div class="level-preview emergency"><b>03</b><span><strong>立即急诊</strong><small>现在就寻求急救</small></span></div>
+        </div>
+      </div>
+
+      <section class="shell trust-grid" aria-label="使用说明">
+        <article><span aria-hidden="true">01</span><h2>结构化自查</h2><p>围绕体温、次数、饮水与日常活动逐项回答，减少遗漏。</p></article>
+        <article><span aria-hidden="true">02</span><h2>最高风险优先</h2><p>只要出现一项红旗表现，建议不会被其他轻症答案降低。</p></article>
+        <article><span aria-hidden="true">03</span><h2>本地随访</h2><p>保存每次结果，复诊前可复制或打印摘要给治疗团队查看。</p></article>
+      </section>
+
+      <section class="shell disclaimer-card">
+        <div class="disclaimer-icon" aria-hidden="true">i</div>
+        <div>
+          <h2>使用前请了解</h2>
+          <p>本工具是基于 CTCAE 严重程度逻辑制作的患者教学演示，不构成医学诊断，也不提供药物、剂量或停药建议。不同医院的发热等阈值可能不同，请始终优先遵从你的主管医生和科室宣教手册。</p>
+        </div>
+      </section>
+    </section>
+
+    <section id="view-check" class="view" aria-labelledby="check-title">
+      <div class="shell check-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">症状自查</p>
+            <h1 id="check-title">告诉我们现在的情况</h1>
+          </div>
+          <button class="text-button" type="button" data-reset-check>重新开始</button>
+        </div>
+
+        <ol class="stepper" aria-label="自查进度">
+          <li class="is-current" data-step-indicator="1"><span>1</span>选择症状</li>
+          <li data-step-indicator="2"><span>2</span>详细情况</li>
+          <li data-step-indicator="3"><span>3</span>补充信息</li>
+          <li data-step-indicator="4"><span>4</span>行动建议</li>
+        </ol>
+
+        <form id="assessment-form" novalidate>
+          <section class="form-step is-active" data-step="1" aria-labelledby="symptom-title">
+            <div class="question-intro">
+              <p class="step-kicker">第 1 步</p>
+              <h2 id="symptom-title">你现在有哪些不舒服？</h2>
+              <p>可以多选。后续问题会根据所选症状出现。</p>
+            </div>
+            <fieldset class="borderless-fieldset">
+              <legend class="sr-only">选择症状</legend>
+              <div id="symptom-grid" class="symptom-grid"></div>
+            </fieldset>
+            <p id="symptom-error" class="field-error" role="alert"></p>
+            <div class="form-nav form-nav-end"><button class="button button-primary" type="button" data-next>下一步：详细情况</button></div>
+          </section>
+
+          <section class="form-step" data-step="2" aria-labelledby="detail-title">
+            <div class="question-intro">
+              <p class="step-kicker">第 2 步</p>
+              <h2 id="detail-title">先排除需要立即处理的情况</h2>
+              <p>如有以下任何一项，请勾选。红旗症状将优先决定行动建议。</p>
+            </div>
+
+            <fieldset class="question-card alert-question">
+              <legend>目前是否有以下表现？</legend>
+              <div id="emergency-flags" class="check-list"></div>
+              <label class="none-check"><input type="checkbox" id="no-emergency"> <span>以上都没有</span></label>
+            </fieldset>
+
+            <div id="dynamic-questions"></div>
+
+            <fieldset class="question-card">
+              <legend>整体状态</legend>
+              <div class="sub-question">
+                <span class="question-label">目前饮水情况</span>
+                <label class="radio-row"><input type="radio" name="global_hydration" value="normal" required><span>能够正常或基本正常饮水</span></label>
+                <label class="radio-row"><input type="radio" name="global_hydration" value="reduced"><span>饮水比平时减少，但仍能喝下</span></label>
+                <label class="radio-row"><input type="radio" name="global_hydration" value="unable"><span>几乎无法饮水或喝下后立即吐出</span></label>
+              </div>
+              <div class="sub-question">
+                <span class="question-label">目前日常活动情况</span>
+                <label class="radio-row"><input type="radio" name="global_daily_function" value="normal" required><span>可以正常或基本正常活动</span></label>
+                <label class="radio-row"><input type="radio" name="global_daily_function" value="limited"><span>活动明显减少，但仍可自我照护</span></label>
+                <label class="radio-row"><input type="radio" name="global_daily_function" value="unable"><span>无法完成洗漱、穿衣、如厕等基本照护</span></label>
+              </div>
+            </fieldset>
+            <p id="detail-error" class="field-error" role="alert"></p>
+            <div class="form-nav"><button class="button button-ghost" type="button" data-prev>上一步</button><button class="button button-primary" type="button" data-next>下一步：补充信息</button></div>
+          </section>
+
+          <section class="form-step" data-step="3" aria-labelledby="context-title">
+            <div class="question-intro">
+              <p class="step-kicker">第 3 步</p>
+              <h2 id="context-title">补充本次随访信息</h2>
+              <p>这些内容只用于生成摘要，不参与自动判断，也不会上传。</p>
+            </div>
+            <div class="context-grid">
+              <label class="input-card"><span>最近一次化疗日期 <small>选填</small></span><input id="chemo-date" type="date"></label>
+              <label class="input-card"><span>症状何时开始 <small>选填</small></span><input id="onset" type="datetime-local"></label>
+              <label class="input-card full"><span>补充备注 <small>选填，不参与自动分流</small></span><textarea id="notes" rows="5" maxlength="600" placeholder="例如：症状变化、已经采取的护理措施、准备询问医生的问题……"></textarea><small class="counter"><span id="note-count">0</span>/600</small></label>
+            </div>
+            <label class="consent-box"><input id="understand" type="checkbox" required><span><strong>我已了解：</strong>本工具不是诊断；若情况危急或我对结果不放心，将直接联系医疗机构。</span></label>
+            <p id="context-error" class="field-error" role="alert"></p>
+            <div class="form-nav"><button class="button button-ghost" type="button" data-prev>上一步</button><button class="button button-primary" type="submit">查看行动建议</button></div>
+          </section>
+
+          <section class="form-step" data-step="4" aria-labelledby="result-title">
+            <div id="result-panel" aria-live="polite"></div>
+          </section>
+        </form>
+      </div>
+    </section>
+
+    <section id="view-history" class="view" aria-labelledby="history-title">
+      <div class="shell history-shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">仅保存在这台设备</p><h1 id="history-title">随访记录</h1></div>
+          <button id="clear-history" class="text-button danger-text" type="button">清空全部</button>
+        </div>
+        <div class="local-only-note"><span aria-hidden="true">◉</span><p><strong>隐私提示</strong><br>记录保存在当前浏览器的本地存储中。清除浏览器数据或更换设备后将无法恢复。</p></div>
+        <div id="history-list" class="history-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><strong>安伴 · 化疗不良反应自查</strong><p>成人化疗患者教学演示工具</p></div>
+      <div><strong>重要联系</strong><p>主管医生：请填写科室号码<br>24 小时热线：请填写科室号码<br>急救电话：<a href="tel:120">120</a></p></div>
+      <div><strong>依据与版本</strong><p><a href="https://ctep.cancer.gov/protocoldevelopment/electronic_applications/docs/CTCAE_v5_Quick_Reference_8.5x11.pdf" target="_blank" rel="noreferrer">NCI CTCAE v5.0</a><br>教学规则版本：demo-ctcae-v1.0.0</p></div>
+    </div>
+    <p class="footer-warning">本工具不提供诊断、处方、剂量调整或停药建议。如有疑问，请优先联系你的治疗团队。</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
